@@ -1,0 +1,45 @@
+--Basic Syntax using SELECT & FROM
+--Using Functions - *, TOP, DISTINCT, COUNT, AS, MAX, MIN, AVG
+
+ SELECT *
+ FROM EmployeeDemographics
+ -- This retrieves all the data from the table.
+ 
+ SELECT FirstName, LastName
+ FROM EmployeeDemographics
+ -- We get specific information here
+ 
+ SELECT TOP 5*
+ FROM EmployeeDemographics
+ -- Querying the just the top 5 is useful if dealing with a huge dataset and you just want a sample
+ 
+ SELECT DISTINCT(EmployeeID)
+ FROM EmployeeDemographics
+ -- It will return 9 vaues, beacsue DISTINCT will only return unique values, it won't return duplicates
+ 
+ SELECT DISTINCT(Gender)
+ FROM EmployeeDemographics
+ -- It will only returnt he 2 genders that are in that column
+ 
+ SELECT COUNT(LastName)
+ FROM EmployeeDemographics
+ -- It will return just the number 9, not the names themselves. Also, you'll see that the column does not have a name.
+ -- Aggregate functions do not have column names unless you specify them.
+ 
+ SELECT COUNT(LastName) AS LastNameCOUNT
+ FROM EmployeeDemographics
+ -- With the AS function it gives the column made by th eaggregate function a name also known as an 'alias'.
+ 
+ SELECT MAX(Salary) AS MaxSalary
+ FROM EmployeeSalary
+ -- This will return the highest salary in the column.
+ 
+ SELECT MIN(Salary) AS MinSalary
+ FROM EmployeeSalary
+ -- This will return the lowest salary in the column.
+ 
+ SELECT AVG(Salary) AS AVGSalary
+ FROM EmployeeSalary
+ -- This will return the average salary from the column.
+ 
+ 
